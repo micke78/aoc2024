@@ -51,7 +51,6 @@ public class Day2 implements Day {
 	List<Report> reports = new ArrayList<>();
 
 	public Day2(String filename) throws FileNotFoundException {
-			super();
 			Scanner scanner = new Scanner(new File(filename));
 			while (scanner.hasNextLine()) {
 				reports.add(new Report(Arrays.stream(scanner.nextLine().split(" +"))

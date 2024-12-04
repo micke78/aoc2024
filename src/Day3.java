@@ -12,7 +12,6 @@ public class Day3 implements Day {
 	Pattern muls_re = Pattern.compile("mul\\(([0-9]+),([0-9]+)\\)");
 
 	public Day3(String filename) throws FileNotFoundException {
-		super();
 		Scanner scanner = new Scanner(new File(filename));
 		StringBuilder input = new StringBuilder();
 		while (scanner.hasNextLine()) {

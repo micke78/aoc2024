@@ -12,7 +12,6 @@ public class Day1 implements Day
 	List<Integer> col2 = new ArrayList<>();
 
 	public Day1(String filename) throws FileNotFoundException {
-		super();
 		Scanner scanner = new Scanner(new File(filename));
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split(" +");
