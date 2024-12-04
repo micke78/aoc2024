@@ -53,7 +53,6 @@ public class Day2 implements Day {
 	public Day2(String filename) throws FileNotFoundException {
 			super();
 			Scanner scanner = new Scanner(new File(filename));
-	//		Scanner scanner = new Scanner(new File("input/example2.txt"));
 			while (scanner.hasNextLine()) {
 				reports.add(new Report(Arrays.stream(scanner.nextLine().split(" +"))
 						.map(Integer::parseInt).collect(Collectors.toUnmodifiableList())
