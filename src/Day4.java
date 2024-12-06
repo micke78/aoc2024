@@ -49,7 +49,20 @@ class Matrix {
 		}
 		return startValue;
 	}
+	public boolean isMAScross(int x, int y) {
+		int[][] offsets = {{-1,-1},{1,-1}};
 
+		if(!pointMatches(x, y, 'A')) return false;
+		for(int[] offset : offsets) {
+			Optional<Character> point1 = getPoint(x+offset[0], y+offset[1]);
+			Optional<Character> point2 = getPoint(x-offset[0], y-offset[1]);
+			if(point1.isEmpty() || point2.isEmpty()) return false;
+			if(point1.get().equals('M') && point2.get().equals('S')) continue;
+			if(point1.get().equals('S') && point2.get().equals('M')) continue;
+			return false;
+		}
+		return true;
+	}
 }
 
 public class Day4 implements Day {
@@ -81,6 +94,12 @@ public class Day4 implements Day {
 
 	@Override
 	public void part2() {
-
+		int matches = 0;
+		for (int x = 1; x < matrix.getWidth() - 1; x++) {
+			for (int y = 1; y < matrix.getHeight() -1; y++) {
+				if(matrix.isMAScross(x, y)) matches++;
+			}
+		}
+		System.out.println(matches);
 	}
 }
